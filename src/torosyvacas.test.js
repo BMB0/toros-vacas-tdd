@@ -1,4 +1,4 @@
-import sumar from "./sumador.js";
+import TorosYVacas from "./torosyvacas.js";
 
 describe("Toros y Vacas --> Ganar", () => {
     it("Deberia responder 'Ganaste!' si se adivina el codigo secreto", () => {
@@ -10,16 +10,3 @@ describe("Toros y Vacas --> Ganar", () => {
         expect(torosyvacas.adivinar("2")).toEqual("");
     });
 });
-
-
-class TorosYVacas {
-    constructor(codigoSecreto) {
-        this.codigoSecreto = codigoSecreto;
-    }
-    adivinar(intento) {
-        if (intento === this.codigoSecreto) {
-            return "Ganaste!";
-        }
-        return "";
-    }
-}
