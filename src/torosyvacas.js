@@ -14,8 +14,9 @@ class TorosYVacas {
                 respuesta += "!";
             }else if (posicion > -1) {
                 respuesta += "*";
+            }else if (this.codigoSecreto.search(intento[i] + 1) > -1 || this.codigoSecreto.search(intento[i] - 1) > -1) {
+                respuesta += "#";
             }
-           
         }
         return respuesta;
     }

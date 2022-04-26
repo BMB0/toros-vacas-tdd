@@ -24,12 +24,19 @@ describe("Toros y Vacas -> Pista de vacas", () => {
         const torosyvacas = new TorosYVacas("124");
         expect(torosyvacas.adivinar("412")).toEqual("***");
     });
-  });
+});
 
-  describe("Toros y Vacas -> Pista de toros", () => {
+describe("Toros y Vacas -> Pista de toros", () => {
     it("Si ingresamos como codigo 12 y nuestro intento es 2 deberia retornar '*'", () => {
       const torosyvacas = new TorosYVacas("12");
-      expect(torosyvacas.adivinar("13")).toEqual("!");
+      expect(torosyvacas.adivinar("14")).toEqual("!");
     });
-  });
+});
+
+describe("Toros y Vacas -> Pista de ternera", () => {
+    it("Si ingresamos como codigo 12 y nuestro intento es 2 deberia retornar '*'", () => {
+      const torosyvacas = new TorosYVacas("14");
+      expect(torosyvacas.adivinar("28")).toEqual("#");
+    });
+});
   
