@@ -3,14 +3,19 @@ class TorosYVacas {
         this.codigoSecreto = codigoSecreto;
     }
     adivinar(intento) {
+        var posicion = 0;
         let respuesta = "";
         if (intento === this.codigoSecreto) {
             return "Ganaste!";
         }
         for (var i = 0; i < this.codigoSecreto.length; i++) {
-            if (this.codigoSecreto.includes(intento[i])) {
+            posicion = this.codigoSecreto.search(intento[i]);
+            if(intento[i] === this.codigoSecreto[i]){
+                respuesta += "!";
+            }else if (posicion > -1) {
                 respuesta += "*";
             }
+           
         }
         return respuesta;
     }
