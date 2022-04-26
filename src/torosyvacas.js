@@ -3,14 +3,16 @@ class TorosYVacas {
         this.codigoSecreto = codigoSecreto;
     }
     adivinar(intento) {
+        let respuesta = "";
         if (intento === this.codigoSecreto) {
             return "Ganaste!";
-        } else if (this.codigoSecreto.search(intento[0]) > -1 && this.codigoSecreto.search(intento[1]) > -1) {
-            return "**";
-        } else if (this.codigoSecreto.search(intento[0]) > -1) {
-            return "*";
         }
-        return "";
+        for (var i = 0; i < this.codigoSecreto.length; i++) {
+            if (this.codigoSecreto.includes(intento[i])) {
+                respuesta += "*";
+            }
+        }
+        return respuesta;
     }
 }
 
